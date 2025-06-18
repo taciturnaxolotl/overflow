@@ -3,5 +3,26 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
+}
+
+#output {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 30vh;
+    background: darkslategray;
+    padding: .5em;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+#logs > div {
+    background: red;
+    color: white;
+    border-radius: .5em;
+    margin: .5em;
+    padding: .5em;
+    box-shadow: 0 5px 5px #0005;
 }
