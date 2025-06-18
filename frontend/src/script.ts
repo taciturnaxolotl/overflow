@@ -9,11 +9,16 @@ const nodeConst = LiteGraph.createNode("overflow/const");
 nodeConst.pos = [200, 200];
 graph.add(nodeConst);
 
+const nodeFilter = LiteGraph.createNode("overflow/nmap");
+nodeFilter.pos = [450, 200];
+graph.add(nodeFilter);
+
 const nodeWatch = LiteGraph.createNode("overflow/log");
 nodeWatch.pos = [700, 200];
 graph.add(nodeWatch);
 
-nodeConst.connect(0, nodeWatch, 0);
+nodeConst.connect(0, nodeFilter, 0);
+nodeFilter.connect(0, nodeWatch, 0);
 
 const onResize = () => {
     const lgCanvas = document.querySelector("#lg") as HTMLCanvasElement;
