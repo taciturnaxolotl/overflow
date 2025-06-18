@@ -3,4 +3,7 @@ import ViteExpress from "vite-express";
 
 const app = express();
 app.get("/hello", (_req, res) => res.send("world"));
-ViteExpress.listen(app, 2003);
+
+ViteExpress.bind(app, app.listen(2003, "localhost", () => {
+    console.log("Running on http://localhost:2003")
+}));
