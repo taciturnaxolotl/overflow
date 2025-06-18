@@ -34,3 +34,19 @@ document.querySelector("#run")?.addEventListener("click", () => {
 document.querySelector("#clear")?.addEventListener("click", () => {
     Array.from((document.querySelector("#logs") as HTMLDivElement).children).forEach(x => x.remove());
 });
+document.querySelector("#save")?.addEventListener("click", () => {
+    const a = document.createElement("a");
+    a.href = `data:text/plain;charset=utf-8,${encodeURIComponent(JSON.stringify(graph.serialize()))}`;
+    a.download = "overflow.json";
+    a.click();
+});
+const file = document.querySelector("#file") as HTMLInputElement;
+file.addEventListener("change", () => {
+    if(file.files === null || file.files.length === 0) return;
+    // @ts-ignore - d.ts requires `string`, but we only have `File`
+    graph.load(file.files[0]);
+});
+document.querySelector("#load")?.addEventListener("click", () => {
+    file.files = null;
+    file.click();
+});
