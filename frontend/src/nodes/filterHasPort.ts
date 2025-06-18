@@ -1,8 +1,6 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
 
 export class FilterHasPort extends LGraphNode {
-    str: string[] = [];
-
     constructor() {
         super();
         this.addInput("Targets", LiteGraph.ACTION);
