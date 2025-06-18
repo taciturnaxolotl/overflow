@@ -1,7 +1,7 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
 
 export class ConstList extends LGraphNode {
-    str: string = [];
+    str: string = "";
 
     constructor() {
         super();
