@@ -12,9 +12,7 @@ export class FilterHasPort extends LGraphNode {
     onAction(action, data) {
         console.log(data);
         this.triggerSlot(0,
-            data.split("\n")
-                .filter(x => x.match(/:\d+$/))
-                .join("\n")
+            data.filter(x => x.match(/:\d+$/))
         );
     }
 }

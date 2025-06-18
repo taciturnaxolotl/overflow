@@ -23,6 +23,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "cidr-tools": "^11.0.3",
     "express": "^5.1.0",
     "litegraph.js": "^0.7.18",
     "vite": "^6.3.5",

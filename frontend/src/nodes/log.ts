@@ -18,7 +18,7 @@ export class LogVulnerable extends LGraphNode {
     // }
     onAction(action, data) {
         console.log(action, data);
-        for(const target of data.split("\n")) {
+        for(const target of data) {
             const logDiv = document.createElement("div");
             logDiv.innerText = `${target} logged as vulnerable with note "${this.note}"`;
             document.querySelector("#logs")?.appendChild(logDiv);
