@@ -1,7 +1,7 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
 
 export class ConstList extends LGraphNode {
-    str: string[] = [];
+    str: string = [];
 
     constructor() {
         super();
@@ -11,7 +11,7 @@ export class ConstList extends LGraphNode {
     title = "Constant list";
     onExecute() {
         // this.setOutputData(0, this.str);
-        this.triggerSlot(0, this.str);
+        this.triggerSlot(0, this.str.split("\n").filter(x => x).join("\n"));
     }
     // onAction(action, data) {
     //     if(action !== "play") return;
