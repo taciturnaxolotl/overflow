@@ -1,3 +1,4 @@
+import "litegraph.js/css/litegraph.css";
 import { LGraph, LGraphCanvas, LiteGraph } from "litegraph.js";
 
 const graph = new LGraph();
