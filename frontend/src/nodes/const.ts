@@ -10,11 +10,6 @@ export class ConstList extends LGraphNode {
     }
     title = "Constant list";
     onExecute() {
-        // this.setOutputData(0, this.str);
         this.triggerSlot(0, this.str.split("\n").filter(x => x));
     }
-    // onAction(action, data) {
-    //     if(action !== "play") return;
-    //     this.triggerSlot(0, this.str);
-    // }
 }
