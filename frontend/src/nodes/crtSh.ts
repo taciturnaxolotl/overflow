@@ -1,5 +1,6 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
 import { expandCidr } from "cidr-tools";
+import { fetchErr } from "../fetch";
 
 export class CRTSh extends LGraphNode {
     domain: string = "";
@@ -11,7 +12,7 @@ export class CRTSh extends LGraphNode {
     }
     title = "crt.sh subdomains scan";
     async onExecute() {
-        const f = await fetch(`/api/crtsh?q=${encodeURIComponent(this.domain)}`);
+        const f = await fetchErr(`/api/crtsh?q=${encodeURIComponent(this.domain)}`);
         const json = await f.json();
         this.triggerSlot(0,
             Array.from(new Set(json.map(x => x.name_value.split("\n")).flat()))

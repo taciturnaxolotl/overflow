@@ -1,4 +1,5 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
+import { fetchErr } from "../fetch";
 
 export class FilterNmap extends LGraphNode {
     ports: string = "";
@@ -11,7 +12,7 @@ export class FilterNmap extends LGraphNode {
     }
     title = "nmap";
     async onAction(action, data) {
-        const f = await fetch("/api/nmap", {
+        const f = await fetchErr("/api/nmap", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ targets: data, opts: { ports: this.ports.split("\n").map(x => parseInt(x)).filter(x => x >= 0 && x <= 65535) } })
