@@ -7,6 +7,7 @@ export class FilterHasPort extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "Has port";
+    serialize_widgets = true;
     onAction(action, data) {
         console.log(data);
         this.triggerSlot(0,

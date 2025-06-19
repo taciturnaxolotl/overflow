@@ -11,6 +11,7 @@ export class FilterNmap extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "nmap";
+    serialize_widgets = true;
     async onAction(action, data) {
         const f = await fetchErr("/api/nmap", {
             method: "POST",

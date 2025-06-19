@@ -9,6 +9,7 @@ export class ConstList extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "Constant list";
+    serialize_widgets = true;
     onExecute() {
         this.triggerSlot(0, this.str.split("\n").filter(x => x));
     }

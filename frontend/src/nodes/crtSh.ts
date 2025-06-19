@@ -11,6 +11,7 @@ export class CRTSh extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "crt.sh subdomains scan";
+    serialize_widgets = true;
     async onExecute() {
         const f = await fetchErr(`/api/crtsh?q=${encodeURIComponent(this.domain)}`);
         const json = await f.json();

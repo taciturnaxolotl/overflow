@@ -15,6 +15,7 @@ export class FilterMetasploitCheck extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "Metasploit check";
+    serialize_widgets = true;
     getOptions(target) {
         return Object.fromEntries(this.opts.split("\n").filter(x => x).map(x => {
             const equals = x.indexOf("=");

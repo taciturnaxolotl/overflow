@@ -12,6 +12,7 @@ export class IPRange extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "IP range";
+    serialize_widgets = true;
     onExecute() {
         this.triggerSlot(0, Array.from(expandCidr(`${this.ip}/${this.mask}`)));
     }

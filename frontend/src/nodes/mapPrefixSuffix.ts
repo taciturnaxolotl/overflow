@@ -12,6 +12,7 @@ export class MapPrefixSuffix extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "Prefix & suffix";
+    serialize_widgets = true;
     async onAction(action, data) {
         this.triggerSlot(0, data.map(x => this.prefix + x + this.suffix));
     }

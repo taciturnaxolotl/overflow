@@ -7,6 +7,7 @@ export class MapStripProtocol extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "Strip protocols";
+    serialize_widgets = true;
     async onAction(action, data) {
         this.triggerSlot(0, data.map(x => x.replace(/^[^:\/]+:\/\//, "")));
     }

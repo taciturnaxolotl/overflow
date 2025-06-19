@@ -7,6 +7,7 @@ export class MapStripPorts extends LGraphNode {
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "Strip ports";
+    serialize_widgets = true;
     async onAction(action, data) {
         this.triggerSlot(0, data.map(x => x.replace(/:\d+$/, "")));
     }
