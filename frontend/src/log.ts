@@ -6,3 +6,4 @@ export const log = (msg, ...classes) => {
 }
 export const logRed = msg => log(msg);
 export const logYellow = msg => log(msg, "warn");
+export const logBlue = msg => log(msg, "info");

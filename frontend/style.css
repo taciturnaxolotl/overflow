@@ -31,3 +31,6 @@
     background: yellow;
     color: black;
 }
+#logs > div.info {
+    background: cornflowerblue;
+}
