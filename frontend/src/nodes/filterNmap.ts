@@ -2,12 +2,11 @@ import { LGraphNode, LiteGraph } from "litegraph.js";
 import { fetchErr } from "../fetch";
 
 export class FilterNmap extends LGraphNode {
-    ports: string = "";
-
     constructor() {
         super();
         this.addInput("Targets", LiteGraph.ACTION);
-        this.addWidget("text", "Ports", "", value => this.ports = value, { multiline: true })
+        this.addProperty("ports", "", "text");
+        this.addWidget("text", "Ports", "", "ports", { multiline: true })
         this.addOutput("Targets", LiteGraph.EVENT);
     }
     title = "nmap";
@@ -16,7 +15,7 @@ export class FilterNmap extends LGraphNode {
         const f = await fetchErr("/api/nmap", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ targets: data, opts: { ports: this.ports.split("\n").map(x => parseInt(x)).filter(x => x >= 0 && x <= 65535) } })
+            body: JSON.stringify({ targets: data, opts: { ports: this.properties.ports.split("\n").map(x => parseInt(x)).filter(x => x >= 0 && x <= 65535) } })
         });
         const json = await f.json();
         this.triggerSlot(0, json);
