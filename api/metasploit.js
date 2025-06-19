@@ -10,7 +10,7 @@ metasploitRouter.post("/check", async (req, res) => {
     let n = 0;
     const cycle = async (resolve, reject) => {
         n++;
-        if(n >= 20) return reject(new Error("Timeout"));
+        if(n >= 500) return reject(new Error("Timeout")); // 15s timeout
         const r = (await msf.runCommand(["module.running_stats"])).results;
         if(r && r.includes(uuid)) resolve();
         else setTimeout(cycle, 30, resolve, reject);
