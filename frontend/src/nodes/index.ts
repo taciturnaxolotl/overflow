@@ -25,5 +25,5 @@ LiteGraph.registerNodeType("overflow/stripproto", MapStripProtocol);
 LiteGraph.registerNodeType("overflow/prefixsuffix", MapPrefixSuffix);
 LiteGraph.registerNodeType("overflow/metasploitcheck", FilterMetasploitCheck);
 LiteGraph.registerNodeType("overflow/lograw", LogRaw);
-LiteGraph.registerNodeType("overflow/stippaths", MapStripPaths);
+LiteGraph.registerNodeType("overflow/strippaths", MapStripPaths);
 LiteGraph.registerNodeType("overflow/burp", FilterBurp);
