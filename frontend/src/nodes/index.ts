@@ -8,6 +8,7 @@ import { MapStripPorts } from "./mapStripPort";
 import { CRTSh } from "./crtSh";
 import { MapStripProtocol } from "./mapStripProtocol";
 import { MapPrefixSuffix } from "./mapPrefixSuffix";
+import { FilterMetasploitCheck } from "./filterMetasploitCheck";
 
 LiteGraph.registerNodeType("overflow/const", ConstList);
 LiteGraph.registerNodeType("overflow/log", LogVulnerable);
@@ -18,3 +19,4 @@ LiteGraph.registerNodeType("overflow/stripports", MapStripPorts);
 LiteGraph.registerNodeType("overflow/crtsh", CRTSh);
 LiteGraph.registerNodeType("overflow/stripproto", MapStripProtocol);
 LiteGraph.registerNodeType("overflow/prefixsuffix", MapPrefixSuffix);
+LiteGraph.registerNodeType("overflow/metasploitcheck", FilterMetasploitCheck);
