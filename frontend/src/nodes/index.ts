@@ -10,6 +10,7 @@ import { MapStripProtocol } from "./mapStripProtocol";
 import { MapPrefixSuffix } from "./mapPrefixSuffix";
 import { FilterMetasploitCheck } from "./filterMetasploitCheck";
 
+LiteGraph.clearRegisteredTypes();
 LiteGraph.registerNodeType("overflow/const", ConstList);
 LiteGraph.registerNodeType("overflow/log", LogVulnerable);
 LiteGraph.registerNodeType("overflow/hasport", FilterHasPort);

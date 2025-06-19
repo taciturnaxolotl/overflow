@@ -14,7 +14,7 @@ overflow-scanner
 ```
 and visit http://localhost:2003. That is the web interface.
 
-On the top, you can edit the scanner graph - double click to create new nodes (**only use nodes named `overflow/*`**, other types of nodes are **not compatible**), drag and drop to create connections.
+On the top, you can edit the scanner graph - double click to create new nodes, drag and drop to create connections.
 
 On the bottom, there are controls and logs.
 
