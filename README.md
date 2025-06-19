@@ -1,6 +1,8 @@
 # overflow
 Vulnerability scanning using graphs!
 
+![Demo](images/demo.png)
+
 ## How to use
 Install this tool using NPM:
 ```bash
