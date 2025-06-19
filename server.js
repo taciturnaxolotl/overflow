@@ -1,7 +1,9 @@
+#!/usr/bin/env node
 import express from "express";
 import ViteExpress from "vite-express";
 import apiRouter from "./api/index.js";
 import * as msf from "./utils/metasploit.js";
+import { join } from "path";
 
 const app = express();
 app.use((req, res, next) => {
@@ -12,6 +14,9 @@ app.use((req, res, next) => {
 
 app.use("/api", apiRouter);
 
+ViteExpress.config({
+    viteConfigFile: join(import.meta.dirname, "vite.config.js")
+});
 ViteExpress.bind(app, app.listen(2003, "localhost", () => {
     console.log("Running on http://localhost:2003");
 }));
