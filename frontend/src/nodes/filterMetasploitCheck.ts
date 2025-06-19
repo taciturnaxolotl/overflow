@@ -1,5 +1,6 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
 import { fetchErr } from "../fetch";
+import { Task } from "../tasks";
 
 const defaultConfig = "rhosts={target}";
 
@@ -23,8 +24,8 @@ export class FilterMetasploitCheck extends LGraphNode {
         }));
     }
     async onAction(action, data) {
-        console.log(data);
         for(const target of data) {
+            const task = new Task(`Metasploit scan of ${target}`);
             console.log(this.getOptions(target));
             const f = await fetchErr("/api/msf/check", {
                 method: "POST",
@@ -32,6 +33,7 @@ export class FilterMetasploitCheck extends LGraphNode {
                 body: JSON.stringify({ exploit: this.properties.exploit, opts: this.getOptions(target) })
             });
             const json = await f.json();
+            task.remove();
             if(!json || !json.result || !json.result.code || json.result.code !== "vulnerable")
                 continue;
             this.triggerSlot(0, [target]);

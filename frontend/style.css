@@ -10,7 +10,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 70vw;
     height: 30vh;
     background: darkslategray;
     padding: .5em;
@@ -18,7 +18,7 @@
     overflow-y: scroll;
 }
 
-#logs > div {
+#logs > div, #tasks > div {
     background: red;
     color: white;
     border-radius: .5em;
@@ -33,4 +33,20 @@
 }
 #logs > div.info {
     background: cornflowerblue;
+}
+#tasks > div {
+    background: lime;
+    color: black;
+}
+
+#tasks {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 30vw;
+    height: 30vh;
+    background: darkslateblue;
+    padding: .5em;
+    box-sizing: border-box;
+    overflow-y: scroll;
 }

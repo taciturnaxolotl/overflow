@@ -1,5 +1,6 @@
 import { LGraphNode, LiteGraph } from "litegraph.js";
 import { fetchErr } from "../fetch";
+import { Task } from "../tasks";
 
 export class FilterNmap extends LGraphNode {
     constructor() {
@@ -12,6 +13,7 @@ export class FilterNmap extends LGraphNode {
     title = "nmap";
     serialize_widgets = true;
     async onAction(action, data) {
+        const task = new Task(`nmap scan of ${data.length} hosts`);
         const f = await fetchErr("/api/nmap", {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -19,5 +21,6 @@ export class FilterNmap extends LGraphNode {
         });
         const json = await f.json();
         this.triggerSlot(0, json);
+        task.remove();
     }
 }
