@@ -25,7 +25,7 @@ export class FilterBurp extends LGraphNode {
                 configName: this.properties.config,
                 targets: data
             })
-        });
+        }, task);
         const json = await f.json();
         for(const found of json.issue_events) {
             this.triggerSlot(1, [`(${found.issue.severity}/${found.issue.confidence}) ${found.issue.origin}${found.issue.path} - ${found.issue.name}`]);

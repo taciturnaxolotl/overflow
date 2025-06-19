@@ -18,7 +18,7 @@ export const init = () => {
         user: "overflow",
         password,
         host: "localhost",
-        persist: false
+        persist: true
     });
 };
 export const deinit = () => {

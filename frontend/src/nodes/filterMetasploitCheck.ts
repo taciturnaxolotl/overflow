@@ -31,7 +31,7 @@ export class FilterMetasploitCheck extends LGraphNode {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ exploit: this.properties.exploit, opts: this.getOptions(target) })
-            });
+            }, task);
             const json = await f.json();
             task.remove();
             if(!json || !json.result || !json.result.code || json.result.code !== "vulnerable")
