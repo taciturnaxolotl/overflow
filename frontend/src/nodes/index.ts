@@ -6,6 +6,8 @@ import { IPRange } from "./ipRange";
 import { FilterNmap } from "./filterNmap";
 import { MapStripPorts } from "./mapStripPort";
 import { CRTSh } from "./crtSh";
+import { MapStripProtocol } from "./mapStripProtocol";
+import { MapPrefixSuffix } from "./mapPrefixSuffix";
 
 LiteGraph.registerNodeType("overflow/const", ConstList);
 LiteGraph.registerNodeType("overflow/log", LogVulnerable);
@@ -14,3 +16,5 @@ LiteGraph.registerNodeType("overflow/iprange", IPRange);
 LiteGraph.registerNodeType("overflow/nmap", FilterNmap);
 LiteGraph.registerNodeType("overflow/stripports", MapStripPorts);
 LiteGraph.registerNodeType("overflow/crtsh", CRTSh);
+LiteGraph.registerNodeType("overflow/stripproto", MapStripProtocol);
+LiteGraph.registerNodeType("overflow/prefixsuffix", MapPrefixSuffix);
