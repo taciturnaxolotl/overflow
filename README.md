@@ -22,3 +22,4 @@ On the bottom, there are controls and logs.
 - [Metasploit](https://www.metasploit.com)
 - [nmap](https://nmap.org)
 - [crt.sh](https://crt.sh)
+- [Burp Suite](https://portswigger.net/burp)
