@@ -26,7 +26,6 @@ export class FilterMetasploitCheck extends LGraphNode {
     async onAction(action, data) {
         for(const target of data) {
             const task = new Task(`Metasploit scan of ${target}`);
-            console.log(this.getOptions(target));
             const f = await fetchErr("/api/msf/check", {
                 method: "POST",
                 headers: { "content-type": "application/json" },

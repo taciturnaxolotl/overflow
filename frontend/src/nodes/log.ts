@@ -11,7 +11,6 @@ export class LogVulnerable extends LGraphNode {
     title = "Log as vulnerable";
     serialize_widgets = true;
     onAction(action, data) {
-        console.log(action, data);
         for(const target of data)
             logRed(`${target} logged as vulnerable with note "${this.properties.note}"`);
     }

@@ -9,7 +9,6 @@ export class FilterHasPort extends LGraphNode {
     title = "Has port";
     serialize_widgets = true;
     onAction(action, data) {
-        console.log(data);
         this.triggerSlot(0,
             data.filter(x => x.match(/:\d+$/))
         );
