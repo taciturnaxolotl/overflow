@@ -22,6 +22,7 @@ import { MapRegexMatch } from "./mapRegexMatch";
 import { MapRegexReplace } from "./mapRegexReplace";
 import { FilterDeduplicate } from "./filterDeduplicate";
 import { SortAlphabetic } from "./sortAlphabetic";
+import { FilterDNS } from "./filterDNS";
 
 LiteGraph.clearRegisteredTypes();
 LiteGraph.registerNodeType("overflow/const", ConstList);
@@ -47,3 +48,4 @@ LiteGraph.registerNodeType("overflow/regexmatch", MapRegexMatch);
 LiteGraph.registerNodeType("overflow/regexreplace", MapRegexReplace);
 LiteGraph.registerNodeType("overflow/deduplicate", FilterDeduplicate);
 LiteGraph.registerNodeType("overflow/sortabc", SortAlphabetic);
+LiteGraph.registerNodeType("overflow/dns", FilterDNS);

@@ -6,6 +6,7 @@ import burpRouter from "./burp.js";
 import sublist3rRouter from "./sublist3r.js";
 import zapRouter from "./zap.js";
 import sqlmapRouter from "./sqlmap.js";
+import dnsRouter from "./dns.js";
 
 const apiRouter = express.Router();
 apiRouter.use("/nmap", nmapRouter);
@@ -15,5 +16,6 @@ apiRouter.use("/burp", burpRouter);
 apiRouter.use("/sublist3r", sublist3rRouter);
 apiRouter.use("/zap", zapRouter);
 apiRouter.use("/sqlmap", sqlmapRouter);
+apiRouter.use("/dns", dnsRouter);
 
 export default apiRouter;
