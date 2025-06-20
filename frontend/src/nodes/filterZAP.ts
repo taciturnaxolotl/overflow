@@ -17,7 +17,7 @@ export class FilterZAP extends LGraphNode {
     serialize_widgets = true;
     async onAction(action, data) {
         for(const target of data) {
-            const task = new Task(`ZAP ${this.properties.type === "spider" ? "spider " : ""}scan of ${data.length} targets`);
+            const task = new Task(`ZAP ${this.properties.type === "spider" ? "spider " : ""}scan of ${target}`);
             const f = await fetchErr(`/api/zap/${this.properties.type}`, {
                 method: "POST",
                 headers: { "content-type": "application/json" },
