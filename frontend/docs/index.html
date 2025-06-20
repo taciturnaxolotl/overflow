@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>overflow.docs</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>overflow.docs</h1>
+        <h2>How to use</h2>
+        <p>Overflow is based on node graphs, which are "blocks" (e.g. nodes) connected with each other. Each node gets something as input from nodes connected from the left, does something with it and passes the output along to other nodes, connected from the right.</p>
+        <p>To add a node, double-click empty space in your workspace. Then you can choose what type of node you want to add, set up the parameters, etc.</p>
+        <p>To connect nodes between each other, drag your mouse from a right-side connector to a left-side connector.</p>
+        
+        <p>On the bottom panel, there are logs and controls on the left side and the tasks view on the right side.</p>
+        <p>The logs display all vulnerable targets, errors and messages.</p>
+        <p>The tasks view displays all currently running tasks, such as scanning or auditing.</p>
+        <p>As for the controls...</p>
+        <ul>
+            <li><b>Run</b> - runs the current workspace, starting from the input nodes (such as <code>overflow/const</code> or <code>overflow/crtsh</code>)</li>
+            <li><b>Clear logs</b> - clears the logs</li>
+            <li><b>Save</b> - saves the workspace to a <code>.json</code> file</li>
+            <li><b>Load</b> - loads the workspace from a <code>.json</code> file</li>
+            <li><b>Docs</b> - opens this page</li>
+        </ul>
+        <h2>Nodes documentation</h2>
+        <details>
+            <summary><code>overflow/const</code></summary>
+            <p>Allows you to paste in or type in a raw list of targets to scan. Targts are separated by newlines.</p>
+        </details>
+        <details>
+            <summary><code>overflow/log</code></summary>
+            <p>Logs a target as vulnerable with an optional custom messsage. The logged target will appear in the "Logs" section.</p>
+        </details>
+        <details>
+            <summary><code>overflow/hasport</code></summary>
+            <p>Takes in a list of targets as input and only outputs those targets that have a port in them.</p>
+        </details>
+        <details>
+            <summary><code>overflow/iprange</code></summary>
+            <p>Takes an IP and a mask, generates a CIDR notation with them (e.g. <code>IP = 192.168.1.0, MASK = 24 -> CIDR = 192.168.1.0/24</code>) and outputs all IPs for that notation.</p>
+            <p><b>Note</b>: Please keep in mind that all IPs are stored in memory at once as strings, so please do not run this with masks lower than 12.</p>
+        </details>
+        <details>
+            <summary><code>overflow/nmap</code></summary>
+            <p>Takes in a list of targets as input and outputs targets with open ports.</p>
+            <p><b>Example</b>: <code>192.168.1.45 -> 192.168.1.45:80, 192.168.1.45:22</code></p>
+        </details>
+        <details>
+            <summary><code>overflow/stripports</code></summary>
+            <p>Takes in a list of targets with ports as input and outputs targets without their ports.</p>
+            <p><b>Example</b>: <code>192.168.1.45:80 -> 192.168.1.45</code></p>
+        </details>
+        <details>
+            <summary><code>overflow/crtsh</code></summary>
+            <p>Makes a request to <a href="https://crt.sh">crt.sh</a> and returns unique subdomains.</p>
+        </details>
+        <details>
+            <summary><code>overflow/stripproto</code></summary>
+            <p>Takes in a list of targets with protocols as input and outputs targets without their protocols.</p>
+            <p><b>Example</b>: <code>ftp://192.168.1.45 -> 192.168.1.45</code></p>
+        </details>
+        <details>
+            <summary><code>overflow/prefixsuffix</code></summary>
+            <p>Adds a prefix and a suffix to a target, can be useful for adding protocols, ports or paths.</p>
+        </details>
+        <details>
+            <summary><code>overflow/metasploitcheck</code></summary>
+            <p>Checks a target using metasploit with the specified exploit. Metasploit is launched with overflow if present on the system.</p>
+        </details>
+        <details>
+            <summary><code>overflow/lograw</code></summary>
+            <p>Logs text as-is.</p>
+        </details>
+        <details>
+            <summary><code>overflow/strippaths</code></summary>
+            <p>Strips paths from targets.</p>
+        </details>
+        <details>
+            <summary><code>overflow/burp</code></summary>
+            <p>Connects to a running Burp Suite instance and scans a webpage using a preset configuration (created in Burp Suite). Requires a valid URL as input.</p>
+        </details>
+        <details>
+            <summary><code>overflow/sublist3r</code></summary>
+            <p>Like <code>overflow/crtsh</code>, but using Sublist3r. The path to Sublist3r can be customized.</p>
+        </details>
+        <details>
+            <summary><code>overflow/zap</code></summary>
+            <p>Like <code>overflow/burp</code>, but using ZAP.</p>
+            <p>Has two modes: <code>spider</code> and <code>scan</code>. Please note that unless a URL was detected by ZAP with <code>spider</code>, <code>scan</code> can't scan it. Also, <code>spider</code> only returns targets, while <code>scan</code> only returns logs.</p>
+        </details>
+        <details>
+            <summary><code>overflow/sqlmap</code></summary>
+            <p>Takes a valid URL as an input and runs sqlmap with customizable parameters. The path to sqlmap can be customized.</p>
+        </details>
+    </body>
+</html>

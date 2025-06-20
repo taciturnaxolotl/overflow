@@ -50,3 +50,6 @@ document.querySelector("#load")?.addEventListener("click", () => {
     file.files = null;
     file.click();
 });
+document.querySelector("#docs")?.addEventListener("click", () => {
+    window.open("/docs/index.html");
+});
