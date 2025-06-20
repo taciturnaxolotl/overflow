@@ -17,6 +17,9 @@ import { FilterZAP } from "./filterZAP";
 import { FilterSqlmap } from "./filterSqlmap";
 import { FilterHasProtocol } from "./filterHasProtocol";
 import { FilterHasPath } from "./filterHasPath";
+import { FilterRegex } from "./filterRegex";
+import { MapRegexMatch } from "./mapRegexMatch";
+import { MapRegexReplace } from "./mapRegexReplace";
 
 LiteGraph.clearRegisteredTypes();
 LiteGraph.registerNodeType("overflow/const", ConstList);
@@ -37,3 +40,6 @@ LiteGraph.registerNodeType("overflow/zap", FilterZAP);
 LiteGraph.registerNodeType("overflow/sqlmap", FilterSqlmap);
 LiteGraph.registerNodeType("overflow/hasproto", FilterHasProtocol);
 LiteGraph.registerNodeType("overflow/haspath", FilterHasPath);
+LiteGraph.registerNodeType("overflow/regex", FilterRegex);
+LiteGraph.registerNodeType("overflow/regexmatch", MapRegexMatch);
+LiteGraph.registerNodeType("overflow/regexreplace", MapRegexReplace);
