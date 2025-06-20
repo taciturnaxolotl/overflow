@@ -23,3 +23,6 @@ On the bottom, there are controls and logs.
 - [nmap](https://nmap.org)
 - [crt.sh](https://crt.sh)
 - [Burp Suite](https://portswigger.net/burp)
+- [Sublist3r](https://github.com/aboul3la/Sublist3r)
+- [ZAP](https://www.zaproxy.org/)
+- [sqlmap](https://sqlmap.org/)
