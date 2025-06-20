@@ -10,7 +10,7 @@ export class FilterHasPort extends LGraphNode {
     serialize_widgets = true;
     onAction(action, data) {
         this.triggerSlot(0,
-            data.filter(x => x.match(/:\d+$/))
+            data.filter(x => x.match(/:\d+(?=$|\/)/))
         );
     }
 }
