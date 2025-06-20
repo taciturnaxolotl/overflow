@@ -15,6 +15,8 @@ import { FilterBurp } from "./filterBurp";
 import { Sublist3r } from "./sublist3r";
 import { FilterZAP } from "./filterZAP";
 import { FilterSqlmap } from "./filterSqlmap";
+import { FilterHasProtocol } from "./filterHasProtocol";
+import { FilterHasPath } from "./filterHasPath";
 
 LiteGraph.clearRegisteredTypes();
 LiteGraph.registerNodeType("overflow/const", ConstList);
@@ -33,3 +35,5 @@ LiteGraph.registerNodeType("overflow/burp", FilterBurp);
 LiteGraph.registerNodeType("overflow/sublist3r", Sublist3r);
 LiteGraph.registerNodeType("overflow/zap", FilterZAP);
 LiteGraph.registerNodeType("overflow/sqlmap", FilterSqlmap);
+LiteGraph.registerNodeType("overflow/hasproto", FilterHasProtocol);
+LiteGraph.registerNodeType("overflow/haspath", FilterHasPath);
