@@ -16,7 +16,7 @@ export class FilterBurp extends LGraphNode {
     title = "Burp Suite scan";
     serialize_widgets = true;
     async onAction(action, data) {
-        const task = new Task(`Burp Suite scan of ${data.length} hosts`);
+        const task = new Task(`Burp Suite scan of ${data.length} targets`);
         const f = await fetchErr("/api/burp", {
             method: "POST",
             headers: { "content-type": "application/json" },

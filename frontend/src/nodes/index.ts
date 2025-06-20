@@ -13,6 +13,7 @@ import { LogRaw } from "./logRaw";
 import { MapStripPaths } from "./mapStripPath";
 import { FilterBurp } from "./filterBurp";
 import { Sublist3r } from "./sublist3r";
+import { FilterZAP } from "./filterZAP";
 
 LiteGraph.clearRegisteredTypes();
 LiteGraph.registerNodeType("overflow/const", ConstList);
@@ -29,3 +30,4 @@ LiteGraph.registerNodeType("overflow/lograw", LogRaw);
 LiteGraph.registerNodeType("overflow/strippaths", MapStripPaths);
 LiteGraph.registerNodeType("overflow/burp", FilterBurp);
 LiteGraph.registerNodeType("overflow/sublist3r", Sublist3r);
+LiteGraph.registerNodeType("overflow/zap", FilterZAP);
