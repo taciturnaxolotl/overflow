@@ -1,6 +1,6 @@
 {
   "name": "overflow-scanner",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Vulnerability scanning using graphs!",
   "keywords": [
     "overflow",
