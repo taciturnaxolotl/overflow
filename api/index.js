@@ -5,6 +5,7 @@ import metasploitRouter from "./metasploit.js";
 import burpRouter from "./burp.js";
 import sublist3rRouter from "./sublist3r.js";
 import zapRouter from "./zap.js";
+import sqlmapRouter from "./sqlmap.js";
 
 const apiRouter = express.Router();
 apiRouter.use("/nmap", nmapRouter);
@@ -13,5 +14,6 @@ apiRouter.use("/msf", metasploitRouter);
 apiRouter.use("/burp", burpRouter);
 apiRouter.use("/sublist3r", sublist3rRouter);
 apiRouter.use("/zap", zapRouter);
+apiRouter.use("/sqlmap", sqlmapRouter);
 
 export default apiRouter;
