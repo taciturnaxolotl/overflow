@@ -14,6 +14,8 @@ overflow-scanner
 ```
 and visit http://localhost:2003. That is the web interface.
 
+> Please note: some nodes require their corresponding programs to be installed and in PATH (e. g. nmap). If they're not installed, the nodes **will not work** and **will throw an error**!
+
 On the top, you can edit the scanner graph - double click to create new nodes, drag and drop to create connections.
 
 On the bottom, there are controls and logs.

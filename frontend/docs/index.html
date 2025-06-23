@@ -12,6 +12,8 @@
         <p>Overflow is based on node graphs, which are "blocks" (e.g. nodes) connected with each other. Each node gets something as input from nodes connected from the left, does something with it and passes the output along to other nodes, connected from the right.</p>
         <p>To add a node, double-click empty space in your workspace. Then you can choose what type of node you want to add, set up the parameters, etc.</p>
         <p>To connect nodes between each other, drag your mouse from a right-side connector to a left-side connector.</p>
+
+        <p>Please note: some modules require the corresponding tools to be installed an in PATH. If you don't have them installed in your system, the modules <b>will not work</b> and <b>will throw an error!</b></p>
         
         <p>On the bottom panel, there are logs and controls on the left side and the tasks view on the right side.</p>
         <p>The logs display all vulnerable targets, errors and messages.</p>
@@ -44,7 +46,7 @@
         </details>
         <details>
             <summary><code>overflow/nmap</code></summary>
-            <p>Takes in a list of targets as input and outputs targets with open ports.</p>
+            <p>Takes in a list of targets as input and outputs targets with open ports using nmap (installed separately).</p>
             <p><b>Example</b>: <code>192.168.1.45 -> 192.168.1.45:80, 192.168.1.45:22</code></p>
         </details>
         <details>
@@ -67,7 +69,7 @@
         </details>
         <details>
             <summary><code>overflow/metasploitcheck</code></summary>
-            <p>Checks a target using metasploit with the specified exploit. Metasploit is launched with overflow if present on the system.</p>
+            <p>Checks a target using metasploit (installed separately) with the specified exploit. Metasploit is launched with overflow if present on the system.</p>
         </details>
         <details>
             <summary><code>overflow/lograw</code></summary>
@@ -79,20 +81,20 @@
         </details>
         <details>
             <summary><code>overflow/burp</code></summary>
-            <p>Connects to a running Burp Suite instance and scans a webpage using a preset configuration (created in Burp Suite). Requires a valid URL as input.</p>
+            <p>Connects to a running Burp Suite (installed separately) instance and scans a webpage using a preset configuration (created in Burp Suite). Requires a valid URL as input.</p>
         </details>
         <details>
             <summary><code>overflow/sublist3r</code></summary>
-            <p>Like <code>overflow/crtsh</code>, but using Sublist3r. The path to Sublist3r can be customized.</p>
+            <p>Like <code>overflow/crtsh</code>, but using Sublist3r (installed separately). The path to Sublist3r can be customized.</p>
         </details>
         <details>
             <summary><code>overflow/zap</code></summary>
-            <p>Like <code>overflow/burp</code>, but using ZAP.</p>
+            <p>Like <code>overflow/burp</code>, but using ZAP (installed separately).</p>
             <p>Has two modes: <code>spider</code> and <code>scan</code>. Please note that unless a URL was detected by ZAP with <code>spider</code>, <code>scan</code> can't scan it. Also, <code>spider</code> only returns targets, while <code>scan</code> only returns logs.</p>
         </details>
         <details>
             <summary><code>overflow/sqlmap</code></summary>
-            <p>Takes a valid URL as an input and runs sqlmap with customizable parameters. The path to sqlmap can be customized.</p>
+            <p>Takes a valid URL as an input and runs sqlmap (installed separately) with customizable parameters. The path to sqlmap can be customized.</p>
         </details>
         <details>
             <summary><code>overflow/hasproto</code></summary>
