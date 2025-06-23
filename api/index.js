@@ -8,6 +8,7 @@ import zapRouter from "./zap.js";
 import sqlmapRouter from "./sqlmap.js";
 import dnsRouter from "./dns.js";
 import fileRouter from "./file.js";
+import requestRouter from "./request.js";
 
 const apiRouter = express.Router();
 apiRouter.use("/nmap", nmapRouter);
@@ -19,5 +20,6 @@ apiRouter.use("/zap", zapRouter);
 apiRouter.use("/sqlmap", sqlmapRouter);
 apiRouter.use("/dns", dnsRouter);
 apiRouter.use("/file", fileRouter);
+apiRouter.use("/request", requestRouter);
 
 export default apiRouter;

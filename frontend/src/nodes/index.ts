@@ -25,6 +25,7 @@ import { SortAlphabetic } from "./sortAlphabetic";
 import { FilterDNS } from "./filterDNS";
 import { FilterDNSReverse } from "./filterDNSReverse";
 import { LogFile } from "./file";
+import { LogPost } from "./logPost";
 
 LiteGraph.clearRegisteredTypes();
 LiteGraph.registerNodeType("overflow/const", ConstList);
@@ -53,3 +54,4 @@ LiteGraph.registerNodeType("overflow/sortabc", SortAlphabetic);
 LiteGraph.registerNodeType("overflow/dns", FilterDNS);
 LiteGraph.registerNodeType("overflow/dnsreverse", FilterDNSReverse);
 LiteGraph.registerNodeType("overflow/file", LogFile);
+LiteGraph.registerNodeType("overflow/logpost", LogPost);
