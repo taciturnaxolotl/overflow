@@ -81,7 +81,7 @@
         </details>
         <details>
             <summary><code>overflow/burp</code></summary>
-            <p>Connects to a running Burp Suite (installed separately) instance and scans a webpage using a preset configuration (created in Burp Suite). Requires a valid URL as input.</p>
+            <p>Connects to a running Burp Suite (installed separately) instance and scans a webpage using a preset configuration (created in Burp Suite). Requires a valid URL as input and Burp Suite to be set up properly (google "burp suite rest api").</p>
         </details>
         <details>
             <summary><code>overflow/sublist3r</code></summary>
@@ -89,7 +89,7 @@
         </details>
         <details>
             <summary><code>overflow/zap</code></summary>
-            <p>Like <code>overflow/burp</code>, but using ZAP (installed separately).</p>
+            <p>Like <code>overflow/burp</code>, but connects to a running ZAP instance (installed separately). To set up ZAP, go to Settings -> API and generate an API key.</p>
             <p>Has two modes: <code>spider</code> and <code>scan</code>. Please note that unless a URL was detected by ZAP with <code>spider</code>, <code>scan</code> can't scan it. Also, <code>spider</code> only returns targets, while <code>scan</code> only returns logs.</p>
         </details>
         <details>
