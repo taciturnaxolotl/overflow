@@ -5,20 +5,25 @@ import apiRouter from "./api/index.js";
 import * as msf from "./utils/metasploit.js";
 import { join } from "path";
 
+const allowRemote = process.argv.includes("--allow-remote");
+const host = allowRemote ? "0.0.0.0" : "localhost";
+
 const app = express();
-app.use((req, res, next) => {
-    if(req.ip !== "127.0.0.1" && req.ip !== "::1")
-        res.status(400).send("Access not allowed from other machines");
-    else next();
-});
+if (!allowRemote) {
+    app.use((req, res, next) => {
+        if(req.ip !== "127.0.0.1" && req.ip !== "::1")
+            res.status(400).send("Access not allowed from other machines");
+        else next();
+    });
+}
 
 app.use("/api", apiRouter);
 
 ViteExpress.config({
     viteConfigFile: join(import.meta.dirname, "vite.config.js")
 });
-ViteExpress.bind(app, app.listen(2003, "localhost", () => {
-    console.log("Running on http://localhost:2003");
+ViteExpress.bind(app, app.listen(2003, host, () => {
+    console.log(`Running on http://${host}:2003`);
 }));
 
 msf.init();
