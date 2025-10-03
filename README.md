@@ -14,6 +14,12 @@ overflow-scanner
 ```
 and visit http://localhost:2003. That is the web interface.
 
+To allow access from other machines on your network, use the `--allow-remote` flag:
+```bash
+overflow-scanner --allow-remote
+```
+This will bind the server to `0.0.0.0:2003` and allow connections from any host.
+
 > Please note: some nodes require their corresponding programs to be installed and in PATH (e. g. nmap). If they're not installed, the nodes **will not work** and **will throw an error**!
 
 On the top, you can edit the scanner graph - double click to create new nodes, drag and drop to create connections.
